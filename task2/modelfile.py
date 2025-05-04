@@ -6,7 +6,7 @@ import pandas as pd
 openai.api_type = "azure"
 openai.api_base = "https://ai-shilpiprd0731ai141105200266.openai.azure.com/"
 openai.api_version = "2024-12-01-preview"
-openai.api_key = "9KVVf4ugt3DVbbP8E1fh8LHoEdCRgZz3xE9T17p7RNMBHNVAcQ3gJQQJ99BDACHYHv6XJ3w3AAAAACOGf1UT"
+# openai.api_key =
 deployment = "gpt-4.1-firstproject"
 
 def state_eligibility(applicant_income, no_dependables, additional_income, loan_period, cibil, loan_amount):
