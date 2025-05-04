@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Portal</title>
+</head>
+<body>
+    <h1>Welcome to the Customer Portal</h1>
+
+    <!-- <form action="/customer_action" method="POST"> -->
+    <form method = 'POST'>
+        <label for="customer_id">Customer ID:</label><br>
+        <input type="text" id="customer_id" name="customer_id" required><br><br>
+
+        <label for="pin">PIN:</label><br>
+        <input type="number" id="pin" name="pin" required><br><br>
+
+        <label for="action">Select Action:</label><br>
+        <select id="action" name="action" required>
+            <option value="check_balance">Check Balance</option>
+            <option value="apply_loan">Apply for Loan</option>
+            <option value="retrieve_interactions">Retrieve Past Interactions</option>
+        </select><br><br>
+
+        <!-- ==== EXTRA FIELDS FOR LOAN APPLICATION ==== -->
+        <div id="loanFields" style="display:none;">
+            <label for="loan_amount">Loan Amount:</label><br>
+            <input type="number" id="loan_amount" name="loan_amount"><br><br>
+
+            <label for="applicant_income">Applicant Income:</label><br>
+            <input type="number" id="applicant_income" name="applicant_income"><br><br>
+
+            <label for="dependables">No. of Dependables:</label><br>
+            <input type="number" id="dependables" name="dependables"><br><br>
+
+            <label for="additional_income">Additional Income:</label><br>
+            <input type="number" id="additional_income" name="additional_income"><br><br>
+
+            <label for="loan_period">Loan Period (months):</label><br>
+            <input type="number" id="loan_period" name="loan_period"><br><br>
+
+            <label for="cibil">CIBIL Score (out of 900):</label><br>
+            <input type="number" id="cibil" name="cibil"><br><br>
+        </div>
+        <!-- ==== END EXTRA FIELDS ==== -->
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        // Show loan fields only if "Apply for Loan" is selected
+        document.getElementById('action').addEventListener('change', function() {
+            var loanFields = document.getElementById('loanFields');
+            if (this.value === 'apply_loan') {
+                loanFields.style.display = 'block';
+            } else {
+                loanFields.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

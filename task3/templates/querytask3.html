@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Customer Actions</title>
+</head>
+<body>
+    <h1>Bank Customer Portal</h1>
+    <form method="POST">
+
+        <label for="customer_id">Customer ID:</label><br>
+        <input type="text" id="customer_id" name="customer_id" required><br><br>
+
+        <label for="pin">PIN:</label><br>
+        <input type="password" id="pin" name="pin" required><br><br>
+
+        <label for="card_no">Card Number:</label><br>
+        <input type="text" id="card_no" name="card_no" required><br><br>
+
+        <label for="card_type">Card Type:</label><br>
+        <select id="card_type" name="card_type" required>
+            <option value="debit">Debit</option>
+            <option value="credit">Credit</option>
+        </select><br><br>
+
+        <h3>Actions:</h3>
+        <p>For Debit Card:</p>
+        <label for="debit_action">Choose Action:</label><br>
+        <select id="debit_action" name="debit_action">
+            <option value="balance">Check Balance</option>
+            <option value="withdrawal">Withdraw</option>
+            <option value="cash_transfer">Cash Transfer</option>
+        </select><br><br>
+
+        <label for="withdrawn_amount">Withdrawal Amount (if applicable):</label><br>
+        <input type="number" step="0.01" id="withdrawn_amount" name="withdrawn_amount"><br><br>
+
+        <label for="amount_transfer">Transfer Amount (if applicable):</label><br>
+        <input type="number" step="0.01" id="amount_transfer" name="amount_transfer"><br><br>
+
+        <label for="receiver_bankacc_no">Receiver Account Number (if transferring):</label><br>
+        <input type="text" id="receiver_bankacc_no" name="receiver_bankacc_no"><br><br>
+
+        <p>For Credit Card:</p>
+        <label for="credit_action">Choose Action:</label><br>
+        <select id="credit_action" name="credit_action">
+            <option value="check_balance">Check Debt</option>
+            <option value="withdrawal">Withdraw</option>
+        </select><br><br>
+
+        <label for="withdraw_amount">Withdrawal Amount (if applicable):</label><br>
+        <input type="number" step="0.01" id="withdraw_amount" name="withdraw_amount"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
